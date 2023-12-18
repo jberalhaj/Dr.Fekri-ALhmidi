@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+  <meta name="theme-color" content="#2C485E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <title>Page title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <header>
+        <nav>
+<div class="dropdown">
+    <button class="dropbtn"><i class="fas fa-bars"></i></button>
+    <div class="dropdown-content">
+      <a href="index.html">الرئيسية</a>
+      <a href="#">الكشوفات</a>
+      <a href="#">التقارير</a>
+      <a href="#">الارشيف</a>
+      <a href="#">العملي</a>
+      <a href="#">النظري</a>
+    </div>
+  </div>
+<a href="index.html" class="logo"><h2>علوم الحاسوب</h2></a>
+        </nav>
+    </header>
+
+    <div class="marquee ">
+        <marquee direction="right">
+       <p> موقع تخصص 
+            <span id="s"><b>”علوم الحاسوب“</b></span>       
+                  كلية التربية والاداب والعلوم الإنسانية والتطبيقية/خولان
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+         <i class="fa fa-computer"></i>
+             رئيس القسم
+          <span id="s"><b>أ.م.د/ فكري محمد الحميدي</b></span>  
+       </p>
+        </marquee>
+    </div>
+
+      <main>
+     <video autoplay muted loop width="100%" height="auto">
+         <source src="wallpaper.mp4" type="">
+     </video>
+    </main>
+    
+        <div class="slider">
+  <button id="prevButton"><span id="ton">السابق</span></button>
+  <div class="card-container">
+ <div class="card"><a href="#" class="link">المقررات</a></div>
+<div class="card"><a href="#" class="link">التكاليف</a></div> 
+<div class="card"><a href="#" class="link">المحاضرات</a></div>
+<div class="card"><a href="#" class="link">الفصل الدراسي</a></div>
+<div class="card"><a href="#" class="link">نتائج الطلاب</a></div>
+<div class="card"><a href="#" class="link">مشاريع التخرج</a></div>
+  </div>
+  <button id="nextButton"><span id="ton">التالي</span></button>
+</div>
+ 
+ <script>
+    const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+const cardContainer = document.querySelector('.card-container');
+
+const cards = document.querySelectorAll('.card');
+const totalCards = cards.length;
+let currentIndex = 0;
+
+prevButton.addEventListener('click', function() {
+  currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+  updateSlider();
+});
+
+nextButton.addEventListener('click', function() {
+  currentIndex = (currentIndex + 1) % totalCards;
+  updateSlider();
+});
+
+function updateSlider() {
+  const cardWidth = cards[0].clientWidth;
+  cardContainer.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+}
+
+// Initial slider position
+updateSlider();
+</script>
+  
+     <div class="login-container">
+    <h3>بيانات الطالب</h3>
+    <hr>
+    <form>
+      <input type="text" placeholder="اسم الطالب" required>
+<input type="password"  placeholder="رقم القيد" maxlength="8" required>
+      <br>
+      <button type="submit" id="submit">ارفاق</button>
+    </form>
+  </div>
+  
+  <footer>
+    <span><a href="mailto:jbermmnalhaj2020@gmail.com"id="com" ><i class="fa fa-envelope">للتواصل </i></a></span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="d"> برمجة وتصميم/</span>
+    <span id="d">جــــبر الــحــاج  
+    </span>
+    <i class="fa fa-laptop-code" style="color: blanchedalmond"></i>
+  </footer>
+  
+</body>
+</html>
